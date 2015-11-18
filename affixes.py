@@ -26,7 +26,7 @@ suffixoids = {affix(u'ant', {'i': 'a'}, 'present active participle', {}, 'partic
               affix(u'it', {'i': 'a'}, 'past passive participle', {}, 'participal suffix'),
               affix(u'ot', {'i': 'a'}, 'future passive participle', {}, 'participal suffix'),
               affix(u'ad', {'i': 'o'}, 'action/process defined by root', {}, 'category suffix'),
-              affix(u'ajx', {'a': 'o'}, 'tangible manifestation of root', {}, 'category suffix'),
+              affix(u'a\u0135', {'a': 'o'}, 'tangible manifestation of root', {}, 'category suffix'),
               affix(u'ec', {'a': 'o'}, 'quality/characteristic defined by root', {}, 'category suffix'),
               affix(u'ul', {'a': 'o'}, 'person characterised by root', {}, 'category suffix'),
               affix(u'an', {'o': 'o'}, 'member/participant/adherent of root', {}, 'noun suffix'),
@@ -49,15 +49,15 @@ suffixoids = {affix(u'ant', {'i': 'a'}, 'present active participle', {}, 'partic
               affix(u'iv', {'i': 'a'}, 'capable of doing whatever is described by root', {}, 'adjective suffix'),
               affix(u'oid', {'o': 'a'}, 'with the form of whatever is described by the root', {}, 'adjective suffix'),
               affix(u'oz', {'o': 'a'}, 'to show presence of large quantity of whatever is described by root', {}, 'adjective suffix'),
-              affix(u'ig', {'a': 'i'}, 'to cause something to be in the state caused by the root', {u'igx'}, 'verb suffix'),
-              affix(u'igx', {'a': 'i'}, 'to become in the state described by the root', {u'ig'}, 'verb suffix'),
+              affix(u'ig', {'a': 'i'}, 'to cause something to be in the state caused by the root', {u'i\u011d'}, 'verb suffix'),
+              affix(u'i\u011d', {'a': 'i'}, 'to become in the state described by the root', {u'ig'}, 'verb suffix'),
               affix(u'art', {'i': 'o'}, 'the art of whatever is described by the root', {}, 'quasi suffix'),
               affix(u'am', {'o': 'a'}, 'loving whatever is described by the root', {}, 'quasi suffix'),
               affix(u'hav', {'o': 'a'}, 'possessing whatever is described by the root', {}, 'quasi suffix'),
               affix(u'plen', {'o': 'a'}, 'full of whatever is described by the root', {}, 'quasi suffix'),
               affix(u'pov', {'i': 'a'}, 'capable of whatever is described by the root', {}, 'quasi suffix'),
-              affix(u'ricx', {'o': 'a'}, 'rich with whatever is described by the root', {}, 'quasi_suffix'),
-              affix(u'sxajn', {'a': 'a'}, 'seeming to be whatever is described by the root', {}, 'quasi suffix'),
+              affix(u'ri\u0109', {'o': 'a'}, 'rich with whatever is described by the root', {}, 'quasi_suffix'),
+              affix(u'\u015dajn', {'a': 'a'}, 'seeming to be whatever is described by the root', {}, 'quasi suffix'),
               affix(u'aspekt', {'o': 'a'}, 'having the appearance of...', {}, 'quasi suffix'),
               affix(u'simil', {'o': 'a'}, 'being similiar to...', {}, 'quasi suffix'),
               affix(u'manier', {'o': 'a'}, 'with the manner of...', {}, 'quasi suffix')}
@@ -67,24 +67,24 @@ prefixoids = {affix(u'dis', {'i': 'i'}, 'having to do with separation, in all po
               affix(u'mis', {'i': 'i'}, 'wrongly, incorrectly', {}, 'adverb prefix'),
               affix(u're', {'i': 'i'}, 'back to the beginning again', {}, 'adverb prefix'),
               affix(u'retro', {'i': 'i'}, 'in the opposite direction', {}, 'adverb prefix'),
-              affix(u'cxef', {'o': 'o'}, 'greatest or most important', {}, 'root prefix'),
+              affix(u'\u0109ef', {'o': 'o'}, 'greatest or most important', {}, 'root prefix'),
               affix(u'vir', {'o': 'o'}, 'male eqivalent of -in', {}, 'root prefix'),
               affix(u'fi', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'expressing indignation/disgust', {}),
-              affix(u'fusx', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'screwed up', {}),
+              affix(u'fu\u015d', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'screwed up', {}),
               affix(u'ne', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'creates the negative affix(not the opposite) of the root', {}),
               affix(u'vic', {'o': 'o'}, 'second in rank, acting regent for', {})}
-suffixes = {affix(u'acx', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'add contempt/detestation', {}),
+suffixes = {affix(u'a\u0109', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'add contempt/detestation', {}),
         affix(u'eg', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'augments or strengthens idea shown by root affix(opposite of -et)', {u'et'}),
         affix(u'et', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'diminishes idea shown by root affix(opposite of -eg)', {u'eg'}),
             affix(u'if', {'o': 'i'}, 'to turn something into the root', {}),
-            affix(u'cxj', {'o': 'o'}, 'takes a man\'s name and makes it intimate', {u'nj'}),
-            affix(u'nj', {'o': 'o'}, 'takes a woman\'s name and makes it intimate', {u'cxj'})}
+            affix(u'\u0109j', {'o': 'o'}, 'takes a man\'s name and makes it intimate', {u'nj'}),
+            affix(u'nj', {'o': 'o'}, 'takes a woman\'s name and makes it intimate', {u'\u0109j'})}
 prefixes = {affix(u'bo', {'o': 'o'}, 'related through marriage', {}),
             affix(u'eks', {'o': 'o'}, 'former', {}),
             affix(u'ge', {'o': 'o'}, 'both sexes taken together', {}),
             affix(u'mal', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'turns a word into its opposite', {}),
             affix(u'pra', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'distant in time affix(usually in past) or relationship', {}),
-            affix(u'pseuxdo', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'false', {})}
+            affix(u'pse\u016ddo', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'false', {})}
 
 # combine the -oids
 suffixes.update(suffixoids)
