@@ -1,8 +1,12 @@
 #!/usr/bin/env ipython
+# coding=utf-8
 # Let's play a word-learning game, sort of.
+
+greenheart = u'💚 '
 
 import random
 from affixes import affixes
+import numpy as np
 
 max_retry = min(len(affixes['prefixes']), len(affixes['suffixes']))
 word_endings = ['o', 'a', 'e', 'i', 'as', 'os', 'is', 'us', 'u', 'on']
@@ -24,7 +28,7 @@ def affix_is_inconsistent(added_affixes, new_affix):
     else:
         return False
 
-def make_soup(root, n_p, n_s):
+def make_soup(root, n_p, n_s, verbose=False):
     """
     Make a new word from a root, containing n_prefixes and n_suffixes
     Also adds a random ending (grammatical form)
@@ -48,7 +52,7 @@ def make_soup(root, n_p, n_s):
             if ending in transformation and not affix_is_inconsistent(added_affixes, prefix) and not prefix in added_affixes:
                 prefix_ok = True
             if retry >= max_retry: 
-                print 'Warning: couldn\'t find suitable prefix'
+                if verbose: print 'Warning: couldn\'t find suitable prefix'
                 continue
         soup = prefix + soup
         added_affixes.append(prefix)
@@ -68,7 +72,7 @@ def make_soup(root, n_p, n_s):
             if ending in transformation and not affix_is_inconsistent(added_affixes, suffix) and not suffix in added_affixes:
                 suffix_ok = True
             if retry >= max_retry:
-                print 'Warning: couldn\'t find suitable suffix'
+                if verbose: print 'Warning: couldn\'t find suitable suffix'
                 continue
         soup = soup + suffix
         added_affixes.append(suffix)
@@ -103,3 +107,19 @@ def read_soup(soup):
     if last_two in affixes['suffixes']:
         print last_two
     return soup
+
+def tweet_soup(root, root_explanation='dog'):
+    """
+    Generate a random number of suffixes and prefixes.
+    Produce a tweet.
+    """
+    n_p = np.random.poisson(lam=0.1)
+    n_s = np.random.poisson(lam=1.2)
+    if n_p == 0 and n_s == 0:
+        n_s = 1
+    soup, meanings = make_soup(root, n_p, n_s)
+    # pretty-print the tweet
+    tweet = soup + '\n' + '='*15 + '\n' + root + '\t: ' + root_explanation + '\n'
+    for (i, (affix, explanation)) in enumerate(meanings):
+        tweet += ' + ' + affix + '\t: ' + explanation +'\n'
+    return tweet
