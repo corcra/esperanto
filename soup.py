@@ -2,6 +2,12 @@
 # coding=utf-8
 # Let's play a word-learning game, sort of.
 
+from __future__ import print_function
+try:
+    xrange
+except NameError:
+    xrange = range
+
 greenheart = u'💚 '
 
 import random
@@ -23,7 +29,7 @@ def affix_is_inconsistent(added_affixes, new_affix):
         conflicts = affixes['suffixes'][new_affix].conflicts
     for c in conflicts:
         if c in added_affixes:
-            print 'Conflict detected between', new_affix, 'and', ', '.join(added_affixes)
+            print('Conflict detected between', new_affix, 'and', ', '.join(added_affixes))
             return True
     else:
         return False
@@ -40,19 +46,19 @@ def make_soup(root, n_p, n_s, verbose=False):
     meanings = []
     for p in xrange(n_p):
         prefix_ok = True
-        prefix = random.choice(affixes['prefixes'].keys())
+        prefix = random.choice(list(affixes['prefixes'].keys()))
         transformation = affixes['prefixes'][prefix].transformations
         retry = 0
         if not ending in transformation or affix_is_inconsistent(added_affixes, prefix) or prefix in added_affixes:
             prefix_ok = False
         while not prefix_ok:
-            prefix = random.choice(affixes['prefixes'].keys())
+            prefix = random.choice(list(affixes['prefixes'].keys()))
             transformation = affixes['prefixes'][prefix].transformations
             retry += 1
             if ending in transformation and not affix_is_inconsistent(added_affixes, prefix) and not prefix in added_affixes:
                 prefix_ok = True
             if retry >= max_retry: 
-                if verbose: print 'Warning: couldn\'t find suitable prefix'
+                if verbose: print('Warning: couldn\'t find suitable prefix')
                 continue
         soup = prefix + soup
         added_affixes.append(prefix)
@@ -60,26 +66,26 @@ def make_soup(root, n_p, n_s, verbose=False):
         ending = transformation[ending]
     for s in xrange(n_s):
         suffix_ok = True
-        suffix = random.choice(affixes['suffixes'].keys())
+        suffix = random.choice(list(affixes['suffixes'].keys()))
         transformation = affixes['suffixes'][suffix].transformations
         retry = 0
         if not ending in transformation or affix_is_inconsistent(added_affixes, suffix) or suffix in added_affixes:
             suffix_ok = False
         while not suffix_ok:
-            suffix = random.choice(affixes['suffixes'].keys())
+            suffix = random.choice(list(affixes['suffixes'].keys()))
             transformation = affixes['suffixes'][suffix].transformations
             retry += 1
             if ending in transformation and not affix_is_inconsistent(added_affixes, suffix) and not suffix in added_affixes:
                 suffix_ok = True
             if retry >= max_retry:
-                if verbose: print 'Warning: couldn\'t find suitable suffix'
+                if verbose: print('Warning: couldn\'t find suitable suffix')
                 continue
         soup = soup + suffix
         added_affixes.append(suffix)
         meanings.append(affixes['suffixes'][suffix].explanation)
         ending = transformation[ending]
     soup += ending
-    return soup, zip(added_affixes, meanings)
+    return soup, list(zip(added_affixes, meanings))
 
 def soup(root, n_p, n_s, cheat=False):
     """
@@ -87,12 +93,12 @@ def soup(root, n_p, n_s, cheat=False):
     """
     soup, meanings = make_soup(root, n_p, n_s)
     if cheat:
-        print root, '\t',
+        print(root, '\t', end=' ')
         for (i, (affix, explanation)) in enumerate(meanings):
             if i > 0:
-                print '\t',
-            print '+', affix, ':', explanation
-    print soup
+                print('\t', end=' ')
+            print('+', affix, ':', explanation)
+    print(soup)
     return True
 
 def read_soup(soup):
@@ -105,7 +111,7 @@ def read_soup(soup):
     
     last_two = soup[-3:-1]
     if last_two in affixes['suffixes']:
-        print last_two
+        print(last_two)
     return soup
 
 def tweet_soup(root, root_explanation='dog'):
