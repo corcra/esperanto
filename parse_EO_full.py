@@ -7,8 +7,12 @@ for line in open('EO_full.txt', 'rU'):
         continue
     eo = ''
     en = ''
-    line = bytes(line, 'utf-8') #Python 3 compat
-    words = line.decode('utf-8').strip('\n').split(' ')
+    try:
+	# Python 2
+        words = line.decode('utf-8').strip('\n').split(' ')
+    except AttributeError:
+	# Python 3
+        words = line.strip('\n').split(' ')
     pre_eo = True
     in_eo = False
     space = False

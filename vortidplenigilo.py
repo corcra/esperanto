@@ -1,6 +1,8 @@
 #!/usr/bin/env ipython
 # This is intended to be run on a cronjob
 
+from __future__ import print_function
+
 import tweepy
 from creds import consumer_key, consumer_secret, access_token, access_token_secret
 from soup import tweet_soup

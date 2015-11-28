@@ -2,6 +2,8 @@
 # coding=utf-8
 # Let's play a word-learning game, sort of.
 
+from __future__ import print_function
+
 greenheart = u'💚 '
 
 import random
