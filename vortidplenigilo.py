@@ -16,14 +16,14 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 # ... try to succeed ... #
 success = False
 while not success:
-    root = random.choice(eo_to_en.keys())
+    root = random.choice(list(eo_to_en.keys()))
     root_meaning = eo_to_en[root]
     try:
         assert root.count(' ') == 0
         tweet = tweet_soup(root, root_meaning)
         assert len(tweet) < 140
         success = True
-        print tweet
+        print(tweet)
     except AssertionError:
         pass
 
