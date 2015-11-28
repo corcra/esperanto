@@ -3,6 +3,10 @@
 # Let's play a word-learning game, sort of.
 
 from __future__ import print_function
+try:
+    xrange
+except NameError:
+    xrange = range
 
 greenheart = u'💚 '
 
@@ -40,7 +44,7 @@ def make_soup(root, n_p, n_s, verbose=False):
     assert ending in {'i', 'o', 'e'}
     added_affixes = []
     meanings = []
-    for p in range(n_p):
+    for p in xrange(n_p):
         prefix_ok = True
         prefix = random.choice(list(affixes['prefixes'].keys()))
         transformation = affixes['prefixes'][prefix].transformations
@@ -60,7 +64,7 @@ def make_soup(root, n_p, n_s, verbose=False):
         added_affixes.append(prefix)
         meanings.append(affixes['prefixes'][prefix].explanation)
         ending = transformation[ending]
-    for s in range(n_s):
+    for s in xrange(n_s):
         suffix_ok = True
         suffix = random.choice(list(affixes['suffixes'].keys()))
         transformation = affixes['suffixes'][suffix].transformations
