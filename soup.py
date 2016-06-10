@@ -29,7 +29,7 @@ def affix_is_inconsistent(added_affixes, new_affix):
         conflicts = affixes['suffixes'][new_affix].conflicts
     for c in conflicts:
         if c in added_affixes:
-            print('Conflict detected between', new_affix, 'and', ', '.join(added_affixes))
+            print('Conflict detected between ' + new_affix + ' and ' + ', '.join(added_affixes).encode('utf8'))
             return True
     else:
         return False
@@ -93,12 +93,12 @@ def soup(root, n_p, n_s, cheat=False):
     """
     soup, meanings = make_soup(root, n_p, n_s)
     if cheat:
-        print(root, '\t', end=' ')
+        print(root + '\t'.encode('utf8'), end=' ')
         for (i, (affix, explanation)) in enumerate(meanings):
             if i > 0:
                 print('\t', end=' ')
-            print('+', affix, ':', explanation)
-    print(soup)
+            print('+ ' + affix + ' : ' + explanation.encode('utf8'))
+    print(soup.encode('utf8'))
     return True
 
 def read_soup(soup):
@@ -111,7 +111,7 @@ def read_soup(soup):
     
     last_two = soup[-3:-1]
     if last_two in affixes['suffixes']:
-        print(last_two)
+        print(last_two.encode('utf8'))
     return soup
 
 def tweet_soup(root, root_explanation='dog'):
@@ -120,7 +120,7 @@ def tweet_soup(root, root_explanation='dog'):
     Produce a tweet.
     """
     n_p = np.random.poisson(lam=0.1)
-    n_s = np.random.poisson(lam=5)
+    n_s = np.random.poisson(lam=3)
     if n_p == 0 and n_s == 0:
         n_s = 1
     soup, meanings = make_soup(root, n_p, n_s)

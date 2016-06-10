@@ -1,4 +1,5 @@
 #!/usr/bin/env ipython
+# coding=utf-8
 # This is intended to be run on a cronjob
 
 from __future__ import print_function
@@ -25,9 +26,9 @@ while not success:
         tweet = tweet_soup(root, root_meaning)
         assert len(tweet) < 140
         success = True
-        print(tweet)
+        print(tweet.encode('utf8'))
     except AssertionError:
         pass
 
 # --- tweet yo --- #
-api.update_status(status=tweet)
+#api.update_status(status=tweet)
