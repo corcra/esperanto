@@ -78,7 +78,7 @@ prefixoids_verbose = {affix(u'dis', {'i': 'i'}, 'having to do with separation, i
 suffixes_verbose = {affix(u'a\u0109', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'add contempt/detestation', {}),
             affix(u'eg', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'augments or strengthens idea shown by root affix(opposite of -et)', {u'et'}),
             affix(u'et', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'diminishes idea shown by root affix(opposite of -eg)', {u'eg'}),
-            affix(u'if', {'o': 'i'}, 'to turn something into the root', {}),
+            affix(u'if', {'o': 'i'}, 'to turn something into the root', {})}
             #affix(u'\u0109j', {'o': 'o'}, 'takes a man\'s name and makes it intimate', {u'nj'}),
             #affix(u'nj', {'o': 'o'}, 'takes a woman\'s name and makes it intimate', {u'\u0109j'})}
 prefixes_verbose = {affix(u'bo', {'o': 'o'}, 'related through marriage', {}),
@@ -87,7 +87,7 @@ prefixes_verbose = {affix(u'bo', {'o': 'o'}, 'related through marriage', {}),
             affix(u'mal', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'turns a word into its opposite', {}),
             affix(u'pra', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'distant in time affix(usually in past) or relationship', {}),
             affix(u'pse\u016ddo', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'false', {}),
-            affix(u'sen', {'a': 'a', 'i': 'i', 'o':'o', 'e': 'e'}, 'without', {}}
+            affix(u'sen', {'a': 'a', 'i': 'i', 'o':'o', 'e': 'e'}, 'without', {})}
 
 suffixoids = {#affix(u'ant', {'i': 'a'}, 'present active participle', {}, 'participal suffix'),
               #affix(u'int', {'i': 'a'}, 'past active participle', {}, 'participal suffix'),
@@ -146,7 +146,7 @@ prefixoids = {affix(u'dis', {'i': 'i'}, 'to do with separation in all directions
 suffixes = {affix(u'a\u0109', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'add contempt/detestation', {}),
             affix(u'eg', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'augments or strengthens idea (opposite of -et)', {u'et'}),
             affix(u'et', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'diminishes idea (opposite of -eg)', {u'eg'}),
-            affix(u'if', {'o': 'i'}, '"-ify"', {}),
+            affix(u'if', {'o': 'i'}, '"-ify"', {})}
             #affix(u'\u0109j', {'o': 'o'}, 'takes a man\'s name and makes it intimate', {u'nj'}),
             #affix(u'nj', {'o': 'o'}, 'takes a woman\'s name and makes it intimate', {u'\u0109j'})}
 prefixes = {affix(u'bo', {'o': 'o'}, 'related through marriage', {}),
@@ -155,7 +155,7 @@ prefixes = {affix(u'bo', {'o': 'o'}, 'related through marriage', {}),
             affix(u'mal', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'turns a word into its opposite', {}),
             affix(u'pra', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'distant in time (usually in past) or relationship', {}),
             affix(u'pse\u016ddo', {'a': 'a', 'i': 'i', 'o': 'o', 'e': 'e'}, 'false', {}),
-            affix(u'sen', {'a': 'a', 'i': 'i', 'o':'o', 'e': 'e'}, 'without', {}}
+            affix(u'sen', {'a': 'a', 'i': 'i', 'o':'o', 'e': 'e'}, 'without', {})}
 
 # combine the -oids
 suffixes.update(suffixoids)
