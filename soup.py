@@ -114,7 +114,7 @@ def tweet_soup(root, root_explanation='dog'):
     Produce a tweet.
     """
     n_p = np.random.poisson(lam=0.1)
-    n_s = np.random.poisson(lam=1.2)
+    n_s = np.random.poisson(lam=5)
     if n_p == 0 and n_s == 0:
         n_s = 1
     soup, meanings = make_soup(root, n_p, n_s)
