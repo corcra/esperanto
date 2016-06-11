@@ -29,7 +29,7 @@ def affix_is_inconsistent(added_affixes, new_affix):
         conflicts = affixes['suffixes'][new_affix].conflicts
     for c in conflicts:
         if c in added_affixes:
-            print('Conflict detected between ' + new_affix + ' and ' + ', '.join(added_affixes).encode('utf8'))
+            print('Conflict detected between ' + new_affix.encode('utf8') + ' and ' + ', '.join(added_affixes).encode('utf8'))
             return True
     else:
         return False
@@ -97,7 +97,7 @@ def soup(root, n_p, n_s, cheat=False):
         for (i, (affix, explanation)) in enumerate(meanings):
             if i > 0:
                 print('\t', end=' ')
-            print('+ ' + affix + ' : ' + explanation.encode('utf8'))
+            print('+ ' + affix.encode('utf8') + ' : ' + explanation.encode('utf8'))
     print(soup.encode('utf8'))
     return True
 
